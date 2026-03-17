@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Kvíz: Německá města</title>
+<title>Kvíz</title>
 <style>
   :root{
     --bg:#f6f8fb;
@@ -98,11 +98,57 @@
     .right{width:360px}
   }
   */
+/* 1) Základní ochrana proti horizontálnímu přetečení */
+html, body {
+  overflow-x: hidden; /* bezpečné řešení, zabrání posunu stránky */
+}
+
+/* 2) Omezit přímé děti body (včetně reklamních wrapperů) */
+body > * {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* 3) Cílené omezení reklamního wrapperu, který Webzdarma vkládá
+   (selektor hledá inline style s width:100% a height:90px) */
+body > div[style*="width:100%"][style*="height:90px"] {
+  max-width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative; /* zachová původní pozici, ale omezí přetečení */
+}
+
+/* 4) Omezit vnitřní div (ten má width:728px) tak, aby se zmenšil na mobilu */
+body > div[style*="width:100%"][style*="height:90px"] > div {
+  width: 100% !important;
+  max-width: 100vw !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+/* 5) Pokud reklama vloží iframe nebo jiný obsah, zajistit, že se nepřeteče */
+body > div[style*="width:100%"][style*="height:90px"] iframe,
+body > div[style*="width:100%"][style*="height:90px"] img {
+  max-width: 100% !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+/* 6) Ujistěte se, že váš hlavní kontejner nepřeteče (pokud ještě nemáte) */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 48px);
+  max-width: 980px;
+  box-sizing: border-box;
+}
+
+
 </style>
 </head>
 <body>
   <div class="container" role="main">
-    <h1>T R O J Ž I V O T N Í &nbsp; &nbsp; K V Í Z</h1>
+    <h1>TROJŽIVOTNÍ KVÍZ</h1>
     <p class="lead">Máte 3 životy. Kvíz použije 10 náhodných otázek. Pokud nezadáte vlastní otázky, použije se demo (přednastavené otázky o německých městech v češtině). Vlastní otázky lze načíst z textarea nebo ze souboru <code>.kviz</code> uloženého ve stejné složce jako <code>kviz.html</code>. Formát: každé pole na novém řádku, otázky oddělené řádkem s třemi tečkami <code>...</code>. Nová databáze musí obsahovat alespoň 10 otázek.</p>
 
     <div class="topbar">
@@ -121,22 +167,11 @@
             <div class="center muted">Stiskněte <strong>Spustit kvíz</strong> pro začátek.</div>
           </div>
         </div>
-<div class="card">
-          <label>Průběh</label>
-          <div class="meta">
-            <div class="progress" title="Progres otázek"><i id="barProgress"></i></div>
-            <div class="muted" id="skore">Správně: 0</div>
-          </div>
-          <div style="height:10px"></div>
-          <label>Tipy</label>
-          <div class="small">Odpovídejte kliknutím nebo klávesami A/B/C. Při načítání ze souboru zadejte pouze jméno (bez přípony); k němu se připojí <code>.kviz</code> a soubor se načte relativně z téže složky.</div>
-        </div>
-<br><br><hr>
       </div>
+
       <!-- RIGHT je nyní pod kvízem (jednosloupcový layout) -->
       <div class="right">
         <div class="card">
-          
           <label for="vlastni">Načtení vlastních otázek</label>
           <textarea id="vlastni" placeholder="Každé pole na novém řádku. Ukončete otázku řádkem s třemi tečkami ... 
 (viz ukázka formátu níže)"></textarea>
@@ -157,7 +192,16 @@ Písmeno správné volby (A/B/C)
 
         <div style="height:12px"></div>
 
-        
+        <div class="card">
+          <label>Průběh</label>
+          <div class="meta">
+            <div class="progress" title="Progres otázek"><i id="barProgress"></i></div>
+            <div class="muted" id="skore">Správně: 0</div>
+          </div>
+          <div style="height:10px"></div>
+          <label>Tipy</label>
+          <div class="small">Odpovídejte kliknutím nebo klávesami A/B/C. Při načítání ze souboru zadejte pouze jméno (bez přípony); k němu se připojí <code>.kviz</code> a soubor se načte relativně z téže složky.</div>
+        </div>
       </div>
     </div>
 
@@ -546,7 +590,107 @@ document.addEventListener('keydown', (e) => {
 
 /* Po načtení stránky nastavíme počáteční stavy */
 aktualizujStavy();
+/*******************
+window.addEventListener('load', function(){
+  const wrappers = document.querySelectorAll('body > div[style*="width:100%"][style*="height:90px"]');
+  wrappers.forEach(w => {
+    const inner = w.querySelector('div');
+    if (inner) {
+      inner.style.width = '100%';
+      inner.style.maxWidth = '100vw';
+      inner.style.boxSizing = 'border-box';
+      w.style.overflow = 'hidden';
+    }
+  });
+});
+*************/
+//***
+(function(){
+  function fixAd(elWrapper){
+    if(!elWrapper) return;
+    try {
+      // přepnout wrapper na overlay (neovlivní layout)
+      elWrapper.style.position = 'fixed';
+      elWrapper.style.right = '0';
+      elWrapper.style.left = 'auto';
+      elWrapper.style.bottom = '0'; // nebo 'top' pokud chcete nahoře
+      elWrapper.style.width = 'auto';
+      elWrapper.style.maxWidth = '320px';
+      elWrapper.style.height = '90px';
+      elWrapper.style.margin = '0';
+      elWrapper.style.overflow = 'hidden';
+      elWrapper.style.zIndex = '9999';
+      elWrapper.style.boxSizing = 'border-box';
+
+      // upravit vnitřní div (ten má width:728px)
+      const inner = elWrapper.querySelector('div');
+      if(inner){
+        inner.style.width = '100%';
+        inner.style.maxWidth = '100vw';
+        inner.style.margin = '0 auto';
+        inner.style.boxSizing = 'border-box';
+      }
+
+      // upravit případné iframe/obrázky
+      elWrapper.querySelectorAll('iframe, img, video').forEach(media=>{
+        media.style.maxWidth = '100%';
+        media.style.width = '100%';
+        media.style.display = 'block';
+      });
+    } catch(e){ console.warn('fixAd error', e); }
+  }
+
+  function findAndFix(){
+    // 1) najít podle známého scriptu
+    document.querySelectorAll('script[src*="floatad.js"]').forEach(s=>{
+      const wrapper = s.closest('div'); // script je uvnitř vnitřního divu
+      // wrapper.closest('div') -> outer wrapper
+      const outer = wrapper ? wrapper.parentElement : null;
+      if(outer && outer.getBoundingClientRect){
+        fixAd(outer);
+      } else if(wrapper){
+        fixAd(wrapper);
+      }
+    });
+
+    // 2) fallback: najít wrapper podle inline stylu (width:100% height:90px)
+    document.querySelectorAll('body > div').forEach(d=>{
+      const st = (d.getAttribute('style') || '').replace(/\s+/g,'').toLowerCase();
+      if(st.includes('width:100%') && st.includes('height:90px')){
+        fixAd(d);
+      }
+    });
+  }
+
+  // spustit po načtení
+  window.addEventListener('load', function(){ findAndFix(); });
+
+  // sledovat DOM pro dynamické vložení reklamy
+  const mo = new MutationObserver((mutations)=>{
+    for(const m of mutations){
+      for(const n of m.addedNodes){
+        if(!(n instanceof HTMLElement)) continue;
+        // pokud přidaný node obsahuje script floatad.js nebo inline wrapper, opravíme
+        if(n.querySelector && n.querySelector('script[src*="floatad.js"]')) {
+          findAndFix();
+          return;
+        }
+        const st = (n.getAttribute && n.getAttribute('style') || '').replace(/\s+/g,'').toLowerCase();
+        if(st.includes('width:100%') && st.includes('height:90px')) {
+          findAndFix();
+          return;
+        }
+      }
+    }
+  });
+  mo.observe(document.body, { childList: true, subtree: true });
+
+  // také spustit hned (pro případ, že už je reklama vložena)
+  findAndFix();
+})();
+//***
 
 </script>
 </body>
 </html>
+
