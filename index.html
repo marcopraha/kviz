@@ -149,7 +149,7 @@ body > div[style*="width:100%"][style*="height:90px"] img {
 <body>
   <div class="container" role="main">
     <h1>TROJŽIVOTNÍ KVÍZ</h1>
-    <p class="lead">Máte 3 životy. Kvíz použije 10 náhodných otázek. Pokud nezadáte vlastní otázky, použije se demo (přednastavené otázky o německých městech v češtině). Vlastní otázky lze načíst z textarea nebo ze souboru <code>.kviz</code> uloženého ve stejné složce jako <code>kviz.html</code>. Formát: každé pole na novém řádku, otázky oddělené řádkem s třemi tečkami <code>...</code>. Nová databáze musí obsahovat alespoň 10 otázek.</p>
+    <p class="lead">Máte 3 životy. Kvíz použije 10 náhodných otázek. Pokud nezadáte vlastní otázky, použije se demo (přednastavené otázky o německých městech v češtině). Vlastní otázky lze načíst z textarea nebo ze souboru uloženého ve stejné složce jako <code>kviz.html</code>. Formát: každé pole na novém řádku, otázky oddělené řádkem s třemi tečkami <code>...</code>. Nová databáze musí obsahovat alespoň 10 otázek.</p>
 
     <div class="topbar">
       <button id="btnStart" class="btn">Spustit kvíz</button>
@@ -168,17 +168,40 @@ body > div[style*="width:100%"][style*="height:90px"] img {
           </div>
         </div>
       </div>
+      
+      <div class="card">
+          <label>Průběh</label>
+          <div class="meta">
+            <div class="progress" title="Progres otázek"><i id="barProgress"></i></div>
+            <div class="muted" id="skore">Správně: 0</div>
+          </div>
+          <div style="height:10px"></div>
+          <label>Tipy</label>
+          <div class="small">Odpovídejte kliknutím nebo klávesami A/B/C. Při načítání ze souboru zadejte pouze jméno souboru bez pripony.</div>
+      </div>
+      
 
       <!-- RIGHT je nyní pod kvízem (jednosloupcový layout) -->
       <div class="right">
+                    <br><br><hr>
         <div class="card">
           <label for="vlastni">Načtení vlastních otázek</label>
           <textarea id="vlastni" placeholder="Každé pole na novém řádku. Ukončete otázku řádkem s třemi tečkami ... 
 (viz ukázka formátu níže)"></textarea>
           <div class="controls">
             <button id="btnNacist" class="btn secondary">Načíst do nové DB</button>
-            <button id="btnNacistSoubor" class="btn">Načíst ze souboru (.kviz)</button>
+            <button id="btnNacistSoubor" class="btn">Načíst ze souboru</button>
           </div>
+          <p>
+              <b>EXISTUJÍCÍ SOUBORY KVÍZŮ:</b><br>
+              RekyNemeckaNemecky<br>
+              SlovesaNemecka1Nemecky<br>
+              SlovesaNemecka2Nemecky<br>
+              MestaRakouskaNemecky<br>
+              JazykCSZaklady<br>
+              JazykPythonZaklady<br>
+              (Kvíz Města Německa je výchozí databáze po načtení/aktualizaci stránky)
+          </p>
           <p class="small">Formát jedné otázky (každý řádek Enter):</p>
           <pre class="example">Text otázky
 Odpověď A
@@ -192,16 +215,7 @@ Písmeno správné volby (A/B/C)
 
         <div style="height:12px"></div>
 
-        <div class="card">
-          <label>Průběh</label>
-          <div class="meta">
-            <div class="progress" title="Progres otázek"><i id="barProgress"></i></div>
-            <div class="muted" id="skore">Správně: 0</div>
-          </div>
-          <div style="height:10px"></div>
-          <label>Tipy</label>
-          <div class="small">Odpovídejte kliknutím nebo klávesami A/B/C. Při načítání ze souboru zadejte pouze jméno (bez přípony); k němu se připojí <code>.kviz</code> a soubor se načte relativně z téže složky.</div>
-        </div>
+        
       </div>
     </div>
 
@@ -219,7 +233,7 @@ const otazky = [
   {"text":"Které město je hlavní město Německa?","odpovedi":["Berlín","Mnichov","Hamburk"],"spravna":0},
   {"text":"Ve kterém městě se koná tradiční Oktoberfest?","odpovedi":["Norimberk","Mnichov","Stuttgart"],"spravna":1},
   {"text":"Které město je známé svou katedrálou Kölner Dom?","odpovedi":["Kolín nad Rýnem","Frankfurt nad Mohanem","Drážďany"],"spravna":0},
-  {"text":"Které město je hlavním finančním centrem s letištěm FRA?","odpovedi":["Bonn","Frankfurt nad Mohanem","Berlín"],"spravna":1},
+  {"text":"Které město je hlavním finančním centrem s velkým mezinárodním letištěm?","odpovedi":["Bonn","Frankfurt nad Mohanem","Berlín"],"spravna":1},
   {"text":"Které město je velký přístav na severu Německa?","odpovedi":["Hamburk","Stuttgart","Düsseldorf"],"spravna":0},
   {"text":"Které město je centrem automobilového průmyslu a sídlem Mercedes a Porsche?","odpovedi":["Stuttgart","Leipzig","Bremen"],"spravna":0},
   {"text":"Které město je známé jako centrum módy a veletrhů v Porýní?","odpovedi":["Düsseldorf","Norimberk","Koblenz"],"spravna":0},
@@ -242,7 +256,7 @@ const otazky = [
   {"text":"Které město je známé svým karnevalem na Rýnu?","odpovedi":["Kolín nad Rýnem","Bonn","Wiesbaden"],"spravna":0},
   {"text":"Které město je hlavním městem Hesenska?","odpovedi":["Wiesbaden","Frankfurt","Kassel"],"spravna":0},
   {"text":"Které město je univerzitní a historické 'Altstadt' v Porýní?","odpovedi":["Heidelberg","Tübingen","Freiburg"],"spravna":0},
-  {"text":"Které město má přístav Bremerhaven v Dolním Sasku?","odpovedi":["Bremen","Bremerhaven","Oldenburg"],"spravna":1},
+  {"text":"Které město má v Dolním Sasku má velký přístav u ústí řeky Weser?","odpovedi":["Bremen","Bremerhaven","Oldenburg"],"spravna":1},
   {"text":"Které město je hlavním městem Bádenska-Württemberska?","odpovedi":["Stuttgart","Karlsruhe","Freiburg"],"spravna":0},
   {"text":"Které město je známé veletrhy Messe v Porýní?","odpovedi":["Düsseldorf","Kolín nad Rýnem","Mannheim"],"spravna":0},
   {"text":"Které město je rodištěm Ludwiga van Beethovena?","odpovedi":["Bonn","Kolín nad Rýnem","Wuppertal"],"spravna":0},
@@ -259,7 +273,7 @@ const otazky = [
 
   {"text":"Které město je známé pivovary a historickým centrem?","odpovedi":["Bamberg","Nürnberg","Regensburg"],"spravna":0},
   {"text":"Které město je hlavním městem Sárska?","odpovedi":["Saarbrücken","Kaiserslautern","Trier"],"spravna":0},
-  {"text":"Které město má starý most 'Alte Brücke' (Heidelberg)?","odpovedi":["Heidelberg","Mannheim","Karlsruhe"],"spravna":0},
+  {"text":"Které město má starý most 'Alte Brücke' přes řeku Neckar?","odpovedi":["Heidelberg","Mannheim","Karlsruhe"],"spravna":0},
   {"text":"Které město je v Durynsku s hrázděnými domy?","odpovedi":["Erfurt","Weimar","Jena"],"spravna":0},
   {"text":"Které město je centrem optiky a vědy?","odpovedi":["Jena","Göttingen","Potsdam"],"spravna":0},
   {"text":"Které město má zámek Sanssouci (barokní centrum)?","odpovedi":["Potsdam","Brandenburg","Magdeburg"],"spravna":0},
@@ -272,7 +286,7 @@ const otazky = [
   {"text":"Které město je známé svými univerzitami (Leibniz) a hudební historií (Wagner)?","odpovedi":["Leipzig","Drážďany","Halle"],"spravna":0},
   {"text":"Které město je známé svými kolmými číslovanými ulicemi - Quadratestadt?","odpovedi":["Mannheim","Karlsruhe","Düsseldorf"],"spravna":0},
   {"text":"Které město je známé jako centrum Franské říše (Karel Veliký)?","odpovedi":["Aachen","Trier","Bonn"],"spravna":0},
-  {"text":"Které město od D je známé jako centrum techniky a průmyslu?","odpovedi":["Duisburg","Essen","Dortmund"],"spravna":0},
+  {"text":"Které město od D je známé jako centrum techniky a průmyslu?","odpovedi":["Duisburg","Dresden","Dortmund"],"spravna":0},
   {"text":"Které město je známé jako brána do Schwarzwaldu?","odpovedi":["Freiburg","Heidelberg","Tübingen"],"spravna":0}
 ];
 
@@ -536,7 +550,7 @@ function nacistDoNoveDatabaze(){
    - pozn.: fetch relativní cesta ./jmeno.kviz
    ========================= */
 async function nacistZeSouboru(){
-  const jmeno = prompt('Zadej jméno souboru (bez přípony). Soubor musí být ve stejné složce jako kviz.html:');
+  const jmeno = prompt('Zadej jméno souboru (bez přípony):');
   if(jmeno === null) return; // uživatel zrušil
   const filename = jmeno.trim() + '.kviz';
   if(!jmeno.trim()){
