@@ -1,0 +1,276 @@
+Které klíčové slovo definuje třídu v C#?
+class
+struct
+namespace
+A
+...
+Který datový typ ukládá celé číslo?
+int
+string
+double
+A
+...
+Který datový typ ukládá text?
+bool
+string
+char
+B
+...
+Jaký je výsledek výrazu 10 / 3 v C#?
+3
+3.3333
+Error
+A
+...
+Který operátor vrací zbytek po dělení?
+/
+//
+%
+C
+...
+Jak se zapisuje komentář na jeden řádek?
+\\ komentář
+// komentář
+<!-- komentář -->
+B
+...
+Které klíčové slovo definuje metodu bez návratové hodnoty?
+void
+method
+func
+A
+...
+Jak vytvoříš instanci třídy Car?
+Car c = new Car();
+Car c();
+new Car = c;
+A
+...
+Který datový typ ukládá hodnoty true/false?
+double
+bool
+int
+B
+...
+Jak se zapisuje podmínka?
+when (x > 5) { }
+if x > 5 then
+if (x > 5) { }
+C
+...
+Co znamená operátor ==?
+Porovnání hodnot
+Přiřazení
+Porovnání typů
+A
+...
+Který operátor slouží k přiřazení?
+==
+=
+:=
+B
+...
+Jak deklaruješ pole o třech prvcích?
+int[] a = new int[3];
+int a = [3];
+array a(3);
+A
+...
+Co dělá List<int> l = new List<int>();?
+Vytvoří pole intů
+Vytvoří slovník
+Vytvoří seznam intů
+C
+...
+Které klíčové slovo ukončí cyklus?
+stop
+break
+exit
+B
+...
+Co dělá continue?
+Ukončí cyklus
+Restartuje cyklus
+Přeskočí aktuální iteraci
+C
+...
+Jak se zapisuje nekonečný cyklus?
+for (;;) { }
+while (false) { }
+loop()
+A
+...
+Které klíčové slovo definuje konstantu?
+const
+static
+readonly
+A
+...
+Co znamená static u metody?
+Patří instanci
+Patří třídě
+Je privátní
+B
+...
+Který symbol označuje dědičnost?
+extends
+inherits
+:
+C
+...
+Jak se zapisuje řetězec?
+"text"
+'text'
+text  
+A
+...
+Co dělá Console.WriteLine()?
+Vypíše text
+Čte vstup
+Ukládá do souboru
+A
+...
+Které klíčové slovo zachytává výjimku?
+catch
+throw
+error
+A
+...
+Co dělá throw?
+Ignoruje chybu
+Vyvolá výjimku
+Restartuje program
+B
+...
+Jaký je výsledek 5 % 2?
+1
+2
+0
+A
+...
+Co znamená public?
+Přístupné odkudkoli
+Přístupné jen uvnitř třídy
+Přístupné jen v assembly
+A
+...
+Co znamená private?
+Přístupné odkudkoli
+Přístupné jen uvnitř třídy
+Přístupné v namespace
+B
+...
+Jak deklaruješ dlouhé celé číslo?
+long x;
+float x;
+decimal x;
+A
+...
+Co dělá using System;?
+Vytváří objekt
+Definuje třídu
+Importuje jmenný prostor
+C
+...
+Co dělá foreach?
+Iteruje přes kolekci
+Maže kolekci
+Vytváří kolekci
+A
+...
+Jaký je výsledek true && false?
+false
+true
+Error
+A
+...
+Jaký je výsledek true || false?
+false
+true
+Error
+B
+...
+Co dělá !true?
+false
+true
+Error
+A
+...
+Jak deklaruješ metodu vracející int?
+int Foo()
+void Foo(int)
+Foo():int
+A
+...
+Co dělá return?
+Restartuje program
+Přeskočí iteraci
+Ukončí metodu a vrátí hodnotu
+C
+...
+Jak vytvoříš nový seznam?
+var list = new List<int>();
+var list = List<int>();
+new list<int>();
+A
+...
+Co dělá ToString()?
+Převede text na číslo
+Převede hodnotu na text
+Uloží hodnotu
+B
+...
+Jak se zapisuje přetížení metody?
+Stejné jméno, jiné parametry
+Stejný název i parametry
+Jiný návratový typ
+A
+...
+Co znamená override?
+Přepíše metodu předka
+Skryje metodu předka
+Zablokuje metodu
+A
+...
+Co dělá int.Parse("10")?
+Vrátí "10"
+Vyvolá výjimku vždy
+Vrátí 10
+C
+...
+Co dělá TryParse?
+Převede text na číslo bez výjimky
+Vždy vyvolá výjimku
+Převede číslo na text
+A
+...
+Jak deklaruješ konstruktor třídy MyClass?
+constructor MyClass()
+public MyClass()
+MyClass:constructor()
+B
+...
+Co znamená null?
+Žádná hodnota
+Nula
+Prázdný řetězec
+A
+...
+Jak porovnáš dva řetězce?
+a = b
+a == b
+a equals b
+B
+...
+Co dělá Environment.NewLine?
+Ukončí program
+Vymaže konzoli
+Vrací znak nového řádku
+C
+...
+Jak vytvoříš pole stringů?
+string[] s = new string[5];
+string s = new string[5];
+string(5) s;
+A
+...

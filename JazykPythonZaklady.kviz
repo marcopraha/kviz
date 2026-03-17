@@ -1,0 +1,264 @@
+Co vypíše print(type(5))?
+class 'int'
+class 'str'
+class 'float'
+A
+...
+Co vrátí len("Python")?
+5
+6
+7
+B
+...
+Který operátor vrací zbytek po dělení?
+/
+//
+%
+C
+...
+Jak správně vytvoříš seznam se třemi prvky 1, 2, 3?
+[1, 2, 3]
+(1, 2, 3)
+{1, 2, 3}
+A
+...
+Jaký operátor v Pythonu provádí celočíselné dělení?
+/
+//
+%
+B
+...
+Co vypíše print(2 ** 4)?
+6
+8
+16
+C
+...
+Jak se v Pythonu zapisuje komentář na jeden řádek?
+# komentář
+// komentář
+/* komentář */
+A
+...
+Který z těchto typů je neměnný (immutable)?
+list
+tuple
+set
+B
+...
+Jak vytvoříš prázdný slovník?
+{}
+[]
+()
+B
+...
+Který příkaz ukončí cyklus for?
+stop
+break
+exit
+B
+...
+Co dělá klíčové slovo continue v cyklu?
+Ukončí celý cyklus
+Přeskočí aktuální iteraci
+Restartuje program
+B
+...
+Jak se definuje funkce v Pythonu?
+def moje_funkce():
+function moje_funkce():
+func moje_funkce():
+A
+...
+Co vrátí výraz 3 == "3"?
+True
+False
+Vyvolá výjimku
+B
+...
+Jaký je výsledek int("10")?
+"10"
+10
+Error
+B
+...
+Jak získáš druhý prvek seznamu a = [10, 20, 30]?
+a[1]
+a[2]
+a[0]
+A
+...
+Co dělá a.append(5) u seznamu a?
+Přidá 5 na konec seznamu
+Odstraní 5 ze seznamu
+Vloží 5 na začátek
+A
+...
+Jaký je výsledek len([])?
+0
+1
+Error
+A
+...
+Jak se zapíše nekonečný cyklus while?
+while 1 == 0:
+while False:
+while True:
+C
+...
+Co dělá funkce input()?
+Načte vstup od uživatele
+Vypíše text na obrazovku
+Ukončí program
+A
+...
+Jaký je výsledek 5 // 2?
+2.5
+2
+3
+B
+...
+Jak se importuje modul math?
+import math
+using math
+load math
+A
+...
+Co vrátí math.sqrt(9)?
+2
+3
+4
+B
+...
+Jak vytvoříš množinu z listu [1, 2, 2, 3]?
+set([1, 2, 2, 3])
+[1, 2, 2, 3]
+(1, 2, 2, 3)
+A
+...
+Co vypíše print("A" * 3)?
+AAA
+A3
+Error
+A
+...
+Jak se zapisuje podmínka v Pythonu?
+when x > 5:
+if (x > 5) then
+if x > 5:
+C
+...
+Co vrátí range(3) v Pythonu 3?
+Objekt range
+[0, 1, 2]
+(0, 1, 2, 3)
+A
+...
+Jak převedeš číslo 5 na řetězec?
+string(5)
+toString(5)
+str(5)
+C
+...
+Jaký je výsledek True and False?
+False
+True
+Error
+A
+...
+Jak se zapisuje slovník se dvěma položkami "a":1, "b":2?
+{ "a": 1, "b": 2 }
+[ "a": 1, "b": 2 ]
+( "a": 1, "b": 2 )
+A
+...
+Co vrátí "python".upper()?
+python
+PYTHON
+Python
+B
+...
+Jak zjistíš typ proměnné x?
+type(x)
+typeof(x)
+gettype(x)
+A
+...
+Co dělá klíčové slovo pass?
+Ukončí funkci
+Vyvolá výjimku
+Nedělá nic, prázdná instrukce
+C
+...
+Jak vytvoříš anonymní funkci, která přičte 1 k x?
+lambda x: x + 1
+def x: x + 1
+func x -> x + 1
+A
+...
+Co vrátí min([3, 1, 2])?
+1
+2
+3
+A
+...
+Jak spojíš dva řetězce "Hello" a "World"?
+"Hello" & "World"
+con("Hello","World")
+"Hello" + "World"
+C
+...
+Co dělá sorted([3, 1, 2])?
+Vrátí nový seřazený seznam
+Otočí pořadí prvků
+Odstraní duplicity
+A
+...
+Jaký je výsledek "a" in "abc"?
+False
+True
+Error
+B
+...
+Jak otevřeš soubor data.txt pro čtení?
+open("data.txt", "r")
+open("data.txt", "w")
+read("data.txt")
+A
+...
+Co dělá blok try?
+Ignoruje chyby
+Restartuje program
+Umožňuje zachytit výjimky
+C
+...
+Jak vytvoříš prázdný seznam?
+[]
+{}
+()
+A
+...
+Jaký je výsledek not False?
+True
+False
+Error
+A
+...
+Jak ukončíš funkci a vrátíš hodnotu 5?
+stop 5
+end 5
+return 5
+C
+...
+Jaký je výsledek sum([1, 2, 3])?
+6
+5
+7
+A
+...
+Jaký je výsledek abs(-5)?
+5
+-5
+0
+A
+...
