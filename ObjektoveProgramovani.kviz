@@ -1,0 +1,234 @@
+Co je to třída v objektově orientovaném programování?
+Šablona (vzorec) pro vytváření objektů se společnými vlastnostmi a chováním
+Konkrétní instance objektu v paměti
+Speciální proměnná pro ukládání dat
+A
+...
+Co je to objekt v objektově orientovaném programování?
+Abstraktní popis budoucích dat a metod
+Konkrétní instance třídy vytvořená v paměti
+Samostatná funkce, která nepatří do žádné třídy
+B
+...
+Co nejlépe vystihuje pojem „dědičnost“ (inheritance)?
+Schopnost skrýt implementační detaily
+Schopnost měnit typ proměnné za běhu programu
+Schopnost jedné třídy přebírat vlastnosti a metody jiné třídy
+C
+...
+Co nejlépe vystihuje pojem „polymorfismus“?
+Schopnost metody mít více různých implementací pro různé typy
+Možnost vytvářet objekty bez tříd
+Způsob, jak ukládat data do souboru
+A
+...
+Co je instanční proměnná (atribut)?
+Proměnná, která patří konkrétnímu objektu
+Proměnná, která je sdílena všemi programy v systému
+Proměnná, která se používá pouze v hlavní funkci programu
+A
+...
+Jak se nazývá proces vytvoření nového objektu z třídy?
+Inicializace objektů
+Deklarace
+Instanciace konstruktorem
+C
+...
+Které tvrzení o konstruktoru je správné?
+Je to metoda, která se automaticky volá při vytvoření objektu
+Je to metoda, kterou nelze přetížit
+Je to speciální proměnná pro ukládání objektů
+A
+...
+K čemu slouží destruktor (v jazycích, které ho používají)?
+K vytvoření nového objektu
+K automatickému úklidu prostředků při zániku objektu
+K přetížení metod
+B
+...
+Jaké klíčové slovo se často používá pro označení aktuální instance třídy
+this, self, me (podle jazyka)
+selfObject, SelfObject, self_object (podle jazyka)
+inst
+A
+...
+Co znamená, že je proměnná soukromá (private)?
+Je přístupná odkudkoli v programu
+Je přístupná pouze z děděných tříd
+Je přístupná pouze z metod stejné třídy
+C
+...
+Co znamená, že je metoda veřejná (public)?
+Lze ji volat odkudkoli, kde je viditelná instance třídy
+Lze ji volat pouze z konstruktoru
+Lze ji volat jen z metod téže třídy
+A
+...
+Které tvrzení popisuje přetížení metody (overloading)?
+Více metod ve stejné třídě se stejným jménem, ale s různými parametry
+Metoda v potomkovi se stejným jménem a parametry jako v rodiči
+Metoda, která nemá návratový typ
+A
+...
+Jaký je hlavní smysl dědičnosti?
+Znovupoužití kódu a rozšiřování existujících tříd
+Zrychlení kompilace programu
+Možnost spouštět program bez hlavní funkce
+A
+...
+Co je to abstraktní třída?
+Třída, ze které nelze vytvářet instance a slouží jako základ pro jiné třídy
+Třída bez konstruktoru
+Třída, která neobsahuje žádné metody
+A
+...
+Které tvrzení o statické metodě (static method) je správné?
+Lze ji volat bez vytvoření instance třídy
+Lze ji volat pouze z konstruktoru
+Lze ji volat pouze uvnitř téže metody
+A
+...
+Jaký přístupový modifikátor se obvykle používá pro zapouzdření interních detailů třídy?
+public
+private
+global
+B
+...
+Jak se nazývá třída, ze které jiná třída dědí?
+Potomkovská třída
+Abstraktní třída
+Rodičovská (základní) třída
+C
+...
+Jak se nazývá třída, která dědí z jiné třídy?
+Rodičovská třída
+Potomkovská (odvozená) třída
+Statická třída
+B
+...
+Co vyjadřuje UML diagram tříd?
+Strukturu databázových tabulek
+Strukturu tříd, jejich atributů, metod a vztahů mezi nimi
+Uspořádání souborů v projektu
+B
+...
+Co je to metoda v kontextu OOP?
+Speciální typ proměnné
+Funkce nebo procedura (operace) definovaná uvnitř třídy
+Soubor, ve kterém jsou uložena data
+B
+...
+Jaký je rozdíl mezi třídou a objektem?
+Žádný, je to totéž
+Třída je instance objektu
+Třída je šablona, objekt je konkrétní instance této šablony
+C
+...
+Která vlastnost je základním principem OOP?
+Sekvenční zpracování bez funkcí
+Zapouzdření, dědičnost a polymorfismus
+Pouze používání globálních proměnných
+B
+...
+K čemu slouží getter (přístupová metoda get)?
+K zápisu hodnoty do soukromého atributu
+K čtení hodnoty soukromého atributu
+K mazání objektů
+B
+...
+K čemu slouží setter (přístupová metoda set)?
+K čtení hodnoty atributu
+K zápisu (změně) hodnoty atributu, často s kontrolou správnosti
+K vytvoření nové třídy
+B
+...
+Jaký je typický důvod použití soukromých atributů a veřejných getterů/setterů?
+Zrychlení výpočtů
+Dodržení principu zapouzdření a možnost kontroly přístupu k datům
+Zmenšení velikosti spustitelného souboru
+B
+...
+Co znamená pojem „instance třídy“?
+Plán, podle kterého se tvoří třídy
+Samostatný program, který používá třídu
+Konkrétní objekt vytvořený z definice třídy
+C
+...
+Jaký je typický účel konstruktoru?
+Zajistit inicializaci objektu do platného počátečního stavu
+Mazat soubory vytvořené třídou
+Překládat kód do strojového jazyka
+A
+...
+Proč je vhodné omezovat použití globálních proměnných v OOP?
+Protože globální proměnné jsou vždy pomalé
+Protože globální proměnné porušují zapouzdření a zhoršují čitelnost a testovatelnost kódu
+Protože globální proměnné nelze v OOP použít
+B
+...
+Co obvykle představuje „stav“ objektu?
+Soubor, ve kterém je třída uložena
+Soubor všech aktuálních hodnot jeho atributů
+Jméno třídy, ze které byl vytvořen
+B
+...
+Co obvykle představuje „chování“ objektu?
+Název objektu
+Metody, které objekt poskytuje
+Velikost objektu v paměti
+B
+...
+Jak se nazývá proces navrhování programu jako souboru spolupracujících objektů?
+Procedurální programování
+Objektově orientovaná analýza a návrh
+Funkcionální programování
+B
+...
+Jaký je typický důvod použití abstraktní metody?
+Zrychlení výpočtů
+Vynucení implementace metody v potomcích
+Zajištění, že metoda nebude nikdy použita
+B
+...
+Co obvykle znamená klíčové slovo „new“ v OOP jazycích (např. Java, C#)?
+Volání destruktoru
+Vytvoření nové instance třídy v paměti
+Smazání objektu z paměti
+B
+...
+Které tvrzení o konstruktorech je obecně správné?
+Mohou mít parametry pro inicializaci atributů
+Nesmí nikdy obsahovat žádný kód
+Musí se vždy jmenovat jinak než třída
+A
+...
+Proč je vhodné rozdělovat velké problémy na menší objekty a třídy?
+Zvyšuje se složitost kódu
+Zlepšuje se přehlednost, znovupoužitelnost a údržba kódu
+Zpomaluje se běh programu
+B
+...
+Jak se jmenuje metodika rozdělování velkých problémy na menší?
+Funkcionální programování
+Strukturované programování
+Objektové
+B
+...
+Co znamená zkratka OOP?
+Objektově orientované programování
+Objektová orientace práce
+Obsluha objektů programu
+A
+...
+Jaký je rozdíl mezi instanční a statickou metodou?
+Instanční metoda se volá na konkrétním objektu, statická na třídě jako celku
+Instanční metoda nemá tělo, statická metoda má
+Žádný, je to totéž
+A
+...
+Co je hlavním cílem objektově orientovaného programování?
+Zapsat program co nejkratší možnou formou
+Reprezentovat části programu jako objekty s vlastním stavem a chováním pro lepší organizaci a znovupoužitelnost
+Eliminovat všechny funkce a procedury z programu
+B
+...
